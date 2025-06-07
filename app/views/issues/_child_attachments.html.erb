@@ -17,6 +17,9 @@
             <%= link_to_attachment attachment, class: 'icon-only icon-download', title: l(:button_download) %>
             <span class="author"><%= attachment.author %>, <%= format_time(attachment.created_on) %></span>
           </p>
+          <% if attachment.description.present? %>
+            <p class="description"><%= attachment.description %></p>
+          <% end %>
           <p class="see-in-issue">
             (<%= l(:label_from_issue) %> <%= link_to_issue(attachment.container, subject: false) %>)
             <% if attachment.image? %>
