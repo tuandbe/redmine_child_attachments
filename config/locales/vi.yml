@@ -1,0 +1,4 @@
+vi:
+  label_child_attachments: "Tệp đính kèm từ ticket con"
+  label_from_issue: "từ"
+  button_insert: "Chèn" 

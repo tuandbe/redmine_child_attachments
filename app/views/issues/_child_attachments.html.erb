@@ -1,0 +1,38 @@
+<%# Renders the list of attachments from child issues with thumbnails and insert buttons %>
+<div id="child-attachments-section">
+  <hr />
+  <p><strong><%= l(:label_child_attachments) %></strong></p>
+  <div class="attachments">
+    <% attachments.each do |attachment| %>
+      <div class="attachment">
+        <% if attachment.thumbnailable? %>
+          <div class="thumbnail">
+            <%= image_tag(url_for(controller: 'attachments', action: 'thumbnail', id: attachment, only_path: true)) %>
+          </div>
+        <% end %>
+        <div class="attachment-info">
+          <p>
+            <%= link_to_attachment attachment, class: 'filename' %>
+            <span class="size">(<%= number_to_human_size attachment.filesize %>)</span>
+            <%= link_to_attachment attachment, class: 'icon-only icon-download', title: l(:button_download) %>
+            <span class="author"><%= attachment.author %>, <%= format_time(attachment.created_on) %></span>
+          </p>
+          <p class="see-in-issue">
+            (<%= l(:label_from_issue) %> <%= link_to_issue(attachment.container, subject: false) %>)
+            <% if attachment.image? %>
+              <a href="#" class="icon icon-copy insert-attachment-link child-attachment-insert-btn"
+                 data-attachment-id="<%= attachment.id %>">
+                <%= l(:button_insert) %>
+              </a>
+            <% end %>
+          </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%# Embed child attachments data as JSON for JavaScript to use %>
+<script type="application/json" id="child-attachments-json-data">
+  <%= raw attachments_json %>
+</script> 

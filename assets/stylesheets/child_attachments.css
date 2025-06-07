@@ -1,0 +1,51 @@
+/* Styles for the child attachments section */
+#child-attachments-section .attachment {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+#child-attachments-section .thumbnail {
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+#child-attachments-section .thumbnail img {
+  max-width: 100px;
+  max-height: 100px;
+  border: 1px solid #ccc;
+}
+
+#child-attachments-section .attachment-details {
+  flex-grow: 1;
+}
+
+#child-attachments-section .attachment-details p {
+  margin: 0 0 5px 0;
+}
+
+a.child-attachment-insert-btn {
+  border: 1px solid #efd290;
+  padding: 2px 8px 2px 22px; /* Adjusted padding for icon */
+  border-radius: 4px;
+  background-color: #ffffdd;
+  text-decoration: none;
+  margin-left: 5px;
+  color: #2996cc;
+  font-weight: normal;
+}
+
+a.child-attachment-insert-btn:hover {
+  background-color: #fcd872;
+  border-color: #ccc;
+  text-decoration: none;
+  color: #2996cc;
+}
+
+/* Specific styling for icon positioning */
+a.child-attachment-insert-btn.icon {
+  background-position: 5px 50%; /* Position icon inside the new padding */
+} 

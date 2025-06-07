@@ -1,0 +1,6 @@
+# English strings go here for Rails i18n
+en:
+  # my_label: "My label"
+  label_child_attachments: "Attachments from child issues"
+  label_from_issue: "from"
+  button_insert: "Insert"
