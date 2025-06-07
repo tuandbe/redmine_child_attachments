@@ -2,9 +2,11 @@
 
 Redmine::Plugin.register :redmine_child_attachments do
   name 'Redmine Child Attachments'
-  author 'Tuan ND (Hapo)'
+  author 'tuandbe'
   description 'This plugin displays attachments from child issues in the parent issue and allows embedding them.'
   version '1.0.0'
+  url 'https://github.com/tuandbe/redmine_child_attachments'
+  author_url 'https://github.com/tuannde'
   requires_redmine version_or_higher: '5.0.0'
 
   # Load hooks and patches using absolute paths to ensure reliability during initialization.
